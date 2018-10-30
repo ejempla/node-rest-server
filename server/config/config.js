@@ -1,29 +1,33 @@
-/*
-definimos el puerto 
-
-*/
-
+// ============================
+//  Puerto
+// ============================
 process.env.PORT = process.env.PORT || 3000;
-/*
-ENTORNO
-*/
 
 
+// ============================
+//  Entorno
+// ============================
 process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
 
 
-/*
-vencimiento de token
-*/
+// ============================
+//  Vencimiento del Token
+// ============================
+// 60 segundos
+// 60 minutos
+// 24 horas
+// 30 días
 process.env.CADUCIDAD_TOKEN = 60 * 60 * 24 * 30;
 
-//process.env.CADUCIDAD_TOKEN = 60 * 60 ;
 
-/*
-seed de autenticacion 
-*/
-process.env.SEED = process.env.SEED || 'esta-es-mi-prueba-de-token-javier';
+// ============================
+//  SEED de autenticación
+// ============================
+process.env.SEED = process.env.SEED || 'este-es-el-seed-desarrollo';
 
+// ============================
+//  Base de datos
+// ============================
 let urlDB;
 
 if (process.env.NODE_ENV === 'dev') {
@@ -31,13 +35,9 @@ if (process.env.NODE_ENV === 'dev') {
 } else {
     urlDB = process.env.MONGO_URI;
 }
-
-
 process.env.URLDB = urlDB;
 
-
-/*
-google client ID
-*/
-
-process.env.CLIENT_ID = process.env.CLIENT_ID || '54555373904-u1fm1d5ml5mmqlud90g2m8gvqc7nenfm.apps.googleusercontent.com';
+// ============================
+//  Google Client ID
+// ============================
+process.env.CLIENT_ID = process.env.CLIENT_ID || '219758474264-vh1bibcphgvbc32km508lubtqkanikf1.apps.googleusercontent.com';
