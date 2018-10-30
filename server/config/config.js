@@ -10,6 +10,19 @@ ENTORNO
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
 
+
+/*
+vencimiento de token
+*/
+process.env.CADUCIDAD_TOKEN = 60 * 60 * 24 * 30;
+
+//process.env.CADUCIDAD_TOKEN = 60 * 60 ;
+
+/*
+seed de autenticacion 
+*/
+process.env.SEED = process.env.SEED || 'esta-es-mi-prueba-de-token-javier';
+
 let urlDB;
 
 if (process.env.NODE_ENV === 'dev') {
