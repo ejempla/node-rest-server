@@ -12,10 +12,10 @@ const app = express();
 app.get('/usuario', verificaToken, (req, res) => {
 
 
-    let desde = req.query.desde || 0;
+    let desde = req.query.desde;
     desde = Number(desde);
 
-    let limite = req.query.limite || 5;
+    let limite = req.query.limite;
     limite = Number(limite);
 
     Usuario.find({ estado: true }, 'nombre email role estado google img')
